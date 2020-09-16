@@ -13,7 +13,7 @@ public class DirectorySearch extends BaseTest {
 
     @BeforeMethod
     public void setUp() {
-        loginBeforeTest();
+        loginAsAdminBeforeTest();
     }
 
     @Test

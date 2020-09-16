@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name = "SeleniumTests">
+
+    <test name = "Login">
+
+        <classes>
+            <class name = "test.java.testCases.UserLogin"/>
+        </classes>
+
+    </test>
+
+    <test name = "Users">
+
+        <classes>
+            <class name = "test.java.testCases.SystemUsers"/>
+        </classes>
+
+    </test>
+
+    <test name = "Directory">
+
+        <classes>
+            <class name = "test.java.testCases.DirectorySearch"/>
+        </classes>
+
+    </test>
+
+</suite>

@@ -12,20 +12,20 @@ public class BaseTest {
     public void goToLoginPage() {
 
         Driver.getInstance().setDriver();
-        LoginPage login = new LoginPage();
-        login.navigateToLoginPage();
-        login.exist();
+        LoginPage loginPage = new LoginPage();
+        loginPage.navigateToLoginPage();
+        loginPage.exist();
 
     }
 
-    public void loginBeforeTest() {
+    public void loginAsAdminBeforeTest() {
 
         Driver.getInstance().setDriver();
-        LoginPage login = new LoginPage();
-        login.navigateToLoginPage();
-        login.enterUsername();
-        login.enterPassword();
-        login.clickOnSubmitButton();
+        LoginPage loginPage = new LoginPage();
+        loginPage.navigateToLoginPage();
+        loginPage.enterUsername("Admin");
+        loginPage.enterPassword("admin123");
+        loginPage.clickOnSubmitButton();
     }
 
     public void teardown() {

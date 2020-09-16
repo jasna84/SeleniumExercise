@@ -16,7 +16,7 @@ public class SystemUsers extends BaseTest {
 
     @BeforeMethod
     public void setUp() {
-        loginBeforeTest();
+        loginAsAdminBeforeTest();
     }
 
     @Test

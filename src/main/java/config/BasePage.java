@@ -53,7 +53,8 @@ public class BasePage {
         element.sendKeys(text);
     }
 
-    public String getUrl() {
+    public static String getUrl() {
+        hardCodedWaiter(2000);
         return Driver.getInstance().getDriver().getCurrentUrl();
     }
 

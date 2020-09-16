@@ -8,6 +8,7 @@ public class LoginPage extends BasePage {
 
     public String loginURL = "https://opensource-demo.orangehrmlive.com/index.php/auth/login";
     public String homeURL = "https://opensource-demo.orangehrmlive.com/index.php/dashboard";
+    public String invalidCredentialsUrl = "https://opensource-demo.orangehrmlive.com/index.php/auth/validateCredentials";
 
     public void navigateToLoginPage() {
         Driver.getInstance().getDriver().navigate().to(loginURL);
@@ -18,24 +19,17 @@ public class LoginPage extends BasePage {
     By submitButton = By.id("btnLogin");
     By errorMessage = By.id("spanMessage");
 
-    public void enterUsername(){
-        sendText(usernameInput, "Admin");
+    public void enterUsername(String username){
+        sendText(usernameInput, username);
     }
-    public void enterPassword(){
-        sendText(passwordInput, "admin123");
+    public void enterPassword(String password){
+        sendText(passwordInput, password);
     }
     public void clickOnSubmitButton(){
         click(submitButton);
     }
-    public void enterInvalidUsername(){
-        sendText(usernameInput, "dfsdfsffs@stagod.com");
-    }
-    public void enterInvalidPassword(){
-        sendText(passwordInput, "fgfdgdgdfgdgdf");
-    }
     public boolean errorMessageIsVisible () {
         return waitForElement(errorMessage, 3);
     }
-    public String currentURL = getUrl();
 
 }
