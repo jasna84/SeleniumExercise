@@ -1,9 +1,11 @@
 package test.java.testCases;
 
+import main.java.config.Driver;
 import main.java.pageObject.DirectoryPage;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import test.java.BaseTest;
 
@@ -12,7 +14,9 @@ public class DirectorySearch extends BaseTest {
     DirectoryPage directory = new DirectoryPage();
 
     @BeforeMethod
-    public void setUp() {
+    @Parameters("browser")
+    public void setUp(String browser) throws Exception {
+        Driver.getInstance().setDriver(browser);
         loginAsAdminBeforeTest();
     }
 

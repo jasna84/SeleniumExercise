@@ -1,12 +1,10 @@
 package test.java.testCases;
 
 import main.java.config.BasePage;
+import main.java.config.Driver;
 import main.java.pageObject.LoginPage;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import test.java.BaseTest;
 
 public class UserLogin extends BaseTest {
@@ -14,7 +12,9 @@ public class UserLogin extends BaseTest {
     LoginPage loginPage = new LoginPage();
 
     @BeforeMethod
-    public void setUp() {
+    @Parameters("browser")
+    public void setUp(String browser) throws Exception {
+        Driver.getInstance().setDriver(browser);
         goToLoginPage();
     }
 
